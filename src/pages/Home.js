@@ -24,7 +24,7 @@ const Home = () => {
 
       {/* Category Carousel */}
       <Container maxWidth={1200} style={{ margin: "64px auto 0 auto" }}>
-        <CategoryCarousel />
+        <CategoryCarousel autoplay count={15} />
       </Container>
 
       {/* Promo Panels */}
@@ -38,7 +38,6 @@ const Home = () => {
         />
         <PromoPanel
           reverse
-          dark
           title="Premium Services for Businesses"
           text="Upgrade your business with our vetted pros. Flexible, reliable, and always on time."
           button="Try Now"
@@ -47,11 +46,20 @@ const Home = () => {
         />
       </div>
 
+      {/* Video Section */}
+      <div style={{ width: "100vw", background: "#f7f7f7", padding: "64px 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <h2 style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 24 }}>See Texi in Action</h2>
+        <video width="720" height="400" controls style={{ borderRadius: 16, boxShadow: "0 2px 16px rgba(0,0,0,0.08)", maxWidth: "95vw" }} poster="https://placehold.co/720x400?text=Texi+Demo+Video">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       {/* Success Stories Section */}
-      <div style={{ width: "100vw", margin: "64px 0 0 0", background: "#000" }}>
+      <div style={{ width: "100vw", margin: "64px 0 0 0", background: "#f7f7f7" }}>
         <Container maxWidth={1200} style={{ padding: "0" }}>
           <div style={{ padding: "32px 0 16px 0", textAlign: "center" }}>
-            <h2 style={{ color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, margin: 0 }}>Success Stories</h2>
+            <h2 style={{ color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, margin: 0 }}>Popular Services</h2>
           </div>
           <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap", margin: "0 auto 24px auto" }}>
             {["Cleaning", "Cooking", "Tutoring", "Repairs", "Gardening", "Electrical", "Laundry", "Home Tutors"].slice(0,7).map((cat, i) => (
@@ -61,8 +69,8 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginBottom: 32 }}>
-            <button style={{ background: "#fff", color: "#000", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer" }}>Join Now</button>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <button style={{ background: "#fff", color: "#000", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer", marginBottom: 30 }}>Join Now</button>
           </div>
         </Container>
       </div>
