@@ -24,7 +24,7 @@ const Home = () => {
 
       {/* Category Carousel */}
       <Container maxWidth={1200} style={{ margin: "64px auto 0 auto" }}>
-        <CategoryCarousel autoplay count={15} />
+        <CategoryCarousel autoplay showArrows count={15} />
       </Container>
 
       {/* Promo Panels */}
@@ -36,18 +36,10 @@ const Home = () => {
           image="💬"
           style={{ padding: "64px 0" }}
         />
-        <PromoPanel
-          reverse
-          title="Premium Services for Businesses"
-          text="Upgrade your business with our vetted pros. Flexible, reliable, and always on time."
-          button="Try Now"
-          image="🏢"
-          style={{ padding: "64px 0" }}
-        />
       </div>
 
       {/* Video Section */}
-      <div style={{ width: "100vw", background: "#f7f7f7", padding: "64px 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ width: "100vw", background: "#f7f7f7", padding: "64px 0 0 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <h2 style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 24 }}>See Texi in Action</h2>
         <video width="720" height="400" controls style={{ borderRadius: 16, boxShadow: "0 2px 16px rgba(0,0,0,0.08)", maxWidth: "95vw" }} poster="https://placehold.co/720x400?text=Texi+Demo+Video">
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
@@ -59,7 +51,7 @@ const Home = () => {
       <div style={{ width: "100vw", margin: "64px 0 0 0", background: "#f7f7f7" }}>
         <Container maxWidth={1200} style={{ padding: "0" }}>
           <div style={{ padding: "32px 0 16px 0", textAlign: "center" }}>
-            <h2 style={{ color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, margin: 0 }}>Popular Services</h2>
+            <h2 style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, margin: 0 }}>Popular Services</h2>
           </div>
           <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap", margin: "0 auto 24px auto" }}>
             {["Cleaning", "Cooking", "Tutoring", "Repairs", "Gardening", "Electrical", "Laundry", "Home Tutors"].slice(0,7).map((cat, i) => (
@@ -70,7 +62,7 @@ const Home = () => {
             ))}
           </div>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <button style={{ background: "#fff", color: "#000", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer", marginBottom: 30 }}>Join Now</button>
+            <button style={{ background: "#000", color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer", marginBottom: 30 }}>Join Now</button>
           </div>
         </Container>
       </div>
@@ -107,11 +99,11 @@ const Home = () => {
       </Container>
 
       {/* Final CTA Banner */}
-      <div style={{ width: "100vw", background: "#000", color: "#fff", textAlign: "center", padding: "64px 0" }}>
+      <div style={{ width: "100vw", background: "#F7F7F7", color: "#111", textAlign: "center", padding: "64px 0" }}>
         <h2 style={{ fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 18 }}>
-          Ready to book your next home service?
+          Ready to book your next service?
         </h2>
-        <button style={{ background: "#fff", color: "#000", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer" }}>
+        <button style={{ background: "#000", color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer" }}>
           Join Texi
         </button>
       </div>
