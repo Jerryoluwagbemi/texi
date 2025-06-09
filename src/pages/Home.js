@@ -16,27 +16,29 @@ const Home = () => {
 
   return (
     <div style={{ width: "100%", background: "#fff" }}>
-      <HeroSearch onSearch={handleHeroSearch} />
-      <CategoryCarousel />
-      <PromoPanel
-        title="Instant Results, Top Talent"
-        text="Connect with trusted professionals in seconds. Texi brings the best home services to your door."
-        button="Get Started"
-        image="💬"
-      />
-      <PromoPanel
-        reverse
-        dark
-        title="Premium Services for Businesses"
-        text="Upgrade your business with our vetted pros. Flexible, reliable, and always on time."
-        button="Try Now"
-        image="🏢"
-      />
-      <CaseStudies />
-      <GalleryGrid />
-      <GuidesCarousel />
-      <GuidesCarousel />
-      <CTASection />
+      <div className="responsive-section">
+        <HeroSearch onSearch={handleHeroSearch} />
+        <CategoryCarousel />
+        <PromoPanel
+          title="Instant Results, Top Talent"
+          text="Connect with trusted professionals in seconds. Texi brings the best home services to your door."
+          button="Get Started"
+          image="💬"
+        />
+        <PromoPanel
+          reverse
+          dark
+          title="Premium Services for Businesses"
+          text="Upgrade your business with our vetted pros. Flexible, reliable, and always on time."
+          button="Try Now"
+          image="🏢"
+        />
+        <CaseStudies />
+        <GalleryGrid />
+        <GuidesCarousel />
+        <GuidesCarousel />
+        <CTASection />
+      </div>
     </div>
   );
 };
