@@ -15,12 +15,12 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div style={{ width: "100%", background: "#fff" }}>
       <HeroSearch onSearch={handleHeroSearch} />
       <CategoryCarousel />
       <PromoPanel
         title="Instant Results, Top Talent"
-        text="Book trusted home professionals in minutes. Compare ratings, chat, and get the job done."
+        text="Connect with trusted professionals in seconds. Texi brings the best home services to your door."
         button="Get Started"
         image="💬"
       />
@@ -28,7 +28,7 @@ const Home = () => {
         reverse
         dark
         title="Premium Services for Businesses"
-        text="Texi for Business offers tailored solutions for offices, landlords, and property managers."
+        text="Upgrade your business with our vetted pros. Flexible, reliable, and always on time."
         button="Try Now"
         image="🏢"
       />
@@ -37,7 +37,7 @@ const Home = () => {
       <GuidesCarousel />
       <GuidesCarousel />
       <CTASection />
-    </>
+    </div>
   );
 };
 
