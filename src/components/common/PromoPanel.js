@@ -1,8 +1,8 @@
 import React from "react";
 
-const PromoPanel = ({ reverse, title, text, button, image }) => (
-  <section style={{ background: "#f7f7f7", color: "#111", padding: "3rem 0" }}>
-    <div style={{ display: "flex", flexDirection: reverse ? "row-reverse" : "row", alignItems: "center", justifyContent: "center", maxWidth: 1100, margin: "0 auto", gap: 48, flexWrap: "wrap" }}>
+const PromoPanel = ({ reverse, title, text, button, image, style }) => (
+  <section style={{ background: "#f7f7f7", color: "#111", padding: "3rem 0", ...style }}>
+    <div className="promo-panel-inner" style={{ display: "flex", flexDirection: reverse ? "row-reverse" : "row", alignItems: "center", justifyContent: "center", maxWidth: 1100, margin: "0 auto", gap: 48, flexWrap: "wrap", boxSizing: "border-box", paddingLeft: 0, paddingRight: 0 }}>
       <div style={{ flex: 1, minWidth: 260, textAlign: reverse ? "right" : "left" }}>
         <h2 style={{ fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 18, color: "#111" }}>{title}</h2>
         <p style={{ fontFamily: "'Jost', Arial, sans-serif", fontSize: 18, marginBottom: 24, color: "#111" }}>{text}</p>

@@ -23,8 +23,8 @@ const Home = () => {
       <HeroSearch onSearch={handleHeroSearch} />
 
       {/* Category Carousel */}
-      <Container maxWidth={1200} style={{ margin: "64px auto 0 auto" }}>
-        <CategoryCarousel autoplay showArrows count={15} />
+      <Container maxWidth={1200} style={{ margin: "20px auto 0 auto", paddingLeft: 10, paddingRight: 10 }}>
+        <CategoryCarousel autoplay showArrows count={16} />
       </Container>
 
       {/* Promo Panels */}
@@ -49,53 +49,27 @@ const Home = () => {
 
       {/* Success Stories Section */}
       <div style={{ width: "100vw", margin: "64px 0 0 0", background: "#f7f7f7" }}>
-        <Container maxWidth={1200} style={{ padding: "0" }}>
+        <Container maxWidth={1200} style={{ padding: 0, paddingLeft: 10, paddingRight: 10 }}>
           <div style={{ padding: "32px 0 16px 0", textAlign: "center" }}>
             <h2 style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, margin: 0 }}>Popular Services</h2>
           </div>
-          <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap", margin: "0 auto 24px auto" }}>
-            {["Cleaning", "Cooking", "Tutoring", "Repairs", "Gardening", "Electrical", "Laundry", "Home Tutors"].slice(0,7).map((cat, i) => (
-              <div key={cat} style={{ background: "#fff", border: "1px solid #000", borderRadius: 12, minWidth: 120, minHeight: 100, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 500, fontSize: 18, cursor: "pointer", transition: "box-shadow 0.2s", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
-                <span style={{ fontSize: 36, marginBottom: 8 }}>{["🧹","🍳","📚","🔧","🌱","💡","🧺"][i]}</span>
+          <div className="popular-services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(8, 1fr)", gap: 10, justifyContent: "center", margin: "0 auto 24px auto", paddingLeft: 10, paddingRight: 10 }}>
+            {["Cleaning", "Cooking", "Tutoring", "Repairs", "Gardening", "Electrical", "Laundry", "Home Tutors"].map((cat, i) => (
+              <div key={cat} style={{ background: "#fff", border: "1px solid #000", borderRadius: 12, minWidth: 100, minHeight: 100, maxWidth: 140, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 500, fontSize: 18, cursor: "pointer", transition: "box-shadow 0.2s", boxShadow: "0 2px 8px rgba(0,0,0,0.04)", width: "100%", margin: 0 }}>
+                <span style={{ fontSize: 36, marginBottom: 8 }}>{["🧹","🍳","📚","🔧","🌱","💡","🧺","👩‍🏫"][i]}</span>
                 {cat}
               </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <div style={{ textAlign: "center", marginBottom: 48, marginTop: 24 }}>
             <button style={{ background: "#000", color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer", marginBottom: 30 }}>Join Now</button>
           </div>
         </Container>
       </div>
 
       {/* Work Grid */}
-      <Container maxWidth={1000} style={{ margin: "64px auto" }}>
-        <div className="grid4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, justifyContent: "center" }}>
-          {[1,2,3,4,5,6,7,8].map(i => (
-            <div key={i} style={{ background: "#eee", borderRadius: 12, width: 200, height: 140, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 500, fontSize: 18, boxShadow: "0 2px 8px rgba(0,0,0,0.04)", transition: "transform 0.2s", cursor: "pointer" }}
-              onMouseOver={e => e.currentTarget.style.transform = "translateY(-8px)"}
-              onMouseOut={e => e.currentTarget.style.transform = "none"}
-            >
-              <img src={`https://placehold.co/200x140?text=Work+${i}`} alt={`Work ${i}`} style={{ borderRadius: 12, width: 200, height: 140, objectFit: "cover" }} />
-            </div>
-          ))}
-        </div>
-      </Container>
-
-      {/* Guides Section */}
-      <Container maxWidth={900} style={{ margin: "64px auto" }}>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 16 }}>
-          <h3 style={{ fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 20, color: "#111", margin: 0 }}>Guides to Help You Grow</h3>
-          <a href="#" style={{ color: "#000", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 500, fontSize: 16, textDecoration: "underline" }}>See more</a>
-        </div>
-        <div className="grid3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, justifyContent: "center" }}>
-          {[1,2,3].map(i => (
-            <div key={i} style={{ background: "#eee", borderRadius: 12, width: 250, height: 150, overflow: "hidden", position: "relative", cursor: "pointer", transition: "transform 0.2s" }}>
-              <img src={`https://placehold.co/250x150?text=Guide+${i}`} alt={`Guide ${i}`} style={{ width: 250, height: 150, objectFit: "cover" }} />
-              <span style={{ position: "absolute", left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.6)", color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 500, fontSize: 16, padding: "6px 12px" }}>Guide Title {i}</span>
-              <div style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontSize: 15, marginTop: 8, textAlign: "center" }}>Short caption for guide {i}</div>
-            </div>
-          ))}
-        </div>
+      <Container maxWidth={1000} className="work-grid-section" style={{ margin: "64px auto" }}>
+        <GalleryGrid />
       </Container>
 
       {/* Final CTA Banner */}
@@ -106,6 +80,23 @@ const Home = () => {
         <button style={{ background: "#000", color: "#fff", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18, border: 0, borderRadius: 6, padding: "12px 32px", cursor: "pointer" }}>
           Join Texi
         </button>
+      </div>
+
+      {/* Download the Texi App Section */}
+      <div style={{ width: "100vw", background: "#fff", color: "#111", textAlign: "center", padding: "56px 0 64px 0", borderTop: "1px solid #eee" }}>
+        <h2 style={{ fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 18 }}>
+          Download the Texi App
+        </h2>
+        <div style={{ display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap", marginTop: 24 }}>
+          <a href="#" style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none", color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18 }}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Download for Android" style={{ height: 60, width: 60, objectFit: "contain", marginBottom: 8, borderRadius: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", background: "#fff" }} />
+            <span>Download for Android</span>
+          </a>
+          <a href="#" style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none", color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 18 }}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Download for iOS" style={{ height: 60, width: 60, objectFit: "contain", marginBottom: 8, borderRadius: 12, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", background: "#fff" }} />
+            <span>Download for iOS</span>
+          </a>
+        </div>
       </div>
     </div>
   );
