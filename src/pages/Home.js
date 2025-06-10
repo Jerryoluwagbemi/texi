@@ -23,8 +23,10 @@ const Home = () => {
       <HeroSearch onSearch={handleHeroSearch} />
 
       {/* Category Carousel */}
-      <Container maxWidth={1200} style={{ margin: "20px auto 0 auto", paddingLeft: 10, paddingRight: 10 }}>
-        <CategoryCarousel autoplay showArrows count={16} />
+      <Container maxWidth={1200} style={{ margin: "20px auto 0 auto" }}>
+        <div className="section-padding">
+          <CategoryCarousel autoplay showArrows count={16} />
+        </div>
       </Container>
 
       {/* Promo Panels */}
@@ -39,7 +41,7 @@ const Home = () => {
       </div>
 
       {/* Video Section */}
-      <div style={{ width: "100vw", background: "#f7f7f7", padding: "64px 0 0 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="section-padding" style={{ width: "100vw", background: "#f7f7f7", padding: "64px 0 0 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <h2 style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 24 }}>See Texi in Action</h2>
         <video width="720" height="400" controls style={{ borderRadius: 16, boxShadow: "0 2px 16px rgba(0,0,0,0.08)", maxWidth: "95vw" }} poster="https://placehold.co/720x400?text=Texi+Demo+Video">
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
@@ -48,12 +50,12 @@ const Home = () => {
       </div>
 
       {/* Success Stories Section */}
-      <div style={{ width: "100vw", margin: "64px 0 0 0", background: "#f7f7f7" }}>
-        <Container maxWidth={1200} style={{ padding: 0, paddingLeft: 10, paddingRight: 10 }}>
+      <div className="section-padding" style={{ width: "100vw", margin: "64px 0 0 0", background: "#f7f7f7" }}>
+        <Container maxWidth={1200} style={{ padding: 0 }}>
           <div style={{ padding: "32px 0 16px 0", textAlign: "center" }}>
             <h2 style={{ color: "#111", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, margin: 0 }}>Popular Services</h2>
           </div>
-          <div className="popular-services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(8, 1fr)", gap: 10, justifyContent: "center", margin: "0 auto 24px auto", paddingLeft: 10, paddingRight: 10 }}>
+          <div className="popular-services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(8, 1fr)", gap: 10, justifyContent: "center", margin: "0 auto 24px auto" }}>
             {["Cleaning", "Cooking", "Tutoring", "Repairs", "Gardening", "Electrical", "Laundry", "Home Tutors"].map((cat, i) => (
               <div key={cat} style={{ background: "#fff", border: "1px solid #000", borderRadius: 12, minWidth: 100, minHeight: 100, maxWidth: 140, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "'Jost', Arial, sans-serif", fontWeight: 500, fontSize: 18, cursor: "pointer", transition: "box-shadow 0.2s", boxShadow: "0 2px 8px rgba(0,0,0,0.04)", width: "100%", margin: 0 }}>
                 <span style={{ fontSize: 36, marginBottom: 8 }}>{["🧹","🍳","📚","🔧","🌱","💡","🧺","👩‍🏫"][i]}</span>
@@ -68,12 +70,12 @@ const Home = () => {
       </div>
 
       {/* Work Grid */}
-      <Container maxWidth={1000} className="work-grid-section" style={{ margin: "64px auto" }}>
+      <Container maxWidth={1000} className="work-grid-section section-padding" style={{ margin: "64px auto" }}>
         <GalleryGrid />
       </Container>
 
       {/* Final CTA Banner */}
-      <div style={{ width: "100vw", background: "#F7F7F7", color: "#111", textAlign: "center", padding: "64px 0" }}>
+      <div className="section-padding" style={{ width: "100vw", background: "#F7F7F7", color: "#111", textAlign: "center", padding: "64px 0" }}>
         <h2 style={{ fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 18 }}>
           Ready to book your next service?
         </h2>
@@ -83,7 +85,7 @@ const Home = () => {
       </div>
 
       {/* Download the Texi App Section */}
-      <div style={{ width: "100vw", background: "#fff", color: "#111", textAlign: "center", padding: "56px 0 64px 0", borderTop: "1px solid #eee" }}>
+      <div className="section-padding" style={{ width: "100vw", background: "#fff", color: "#111", textAlign: "center", padding: "56px 0 64px 0", borderTop: "1px solid #eee" }}>
         <h2 style={{ fontFamily: "'Jost', Arial, sans-serif", fontWeight: 700, fontSize: 28, marginBottom: 18 }}>
           Download the Texi App
         </h2>

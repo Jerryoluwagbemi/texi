@@ -19,7 +19,20 @@ const HeroSearch = ({ onSearch }) => {
 
   // Responsive: show only 6 category pills on mobile, 2 rows of 3
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 600;
+  const isTablet = typeof window !== "undefined" && window.innerWidth > 600 && window.innerWidth <= 900;
   const pills = isMobile ? topCategories.slice(0, 6) : topCategories;
+
+  // Responsive field/button width
+  const getFormWidth = () => {
+    if (isMobile) return "calc(100vw - 20px)";
+    if (isTablet) return "calc(100vw - 20px)";
+    return 700;
+  };
+  const getButtonWidth = () => {
+    if (isMobile) return "50%";
+    if (isTablet) return "60%";
+    return undefined;
+  };
 
   return (
     <section
@@ -49,13 +62,17 @@ const HeroSearch = ({ onSearch }) => {
           padding: 8,
           marginBottom: 16,
           maxWidth: 700,
-          width: "100%",
+          width: getFormWidth(),
           background: "none",
           boxShadow: "none",
           zIndex: 2,
-          flexDirection: window.innerWidth <= 600 ? "column" : "row",
-          marginLeft: window.innerWidth > 600 ? "auto" : undefined,
-          marginRight: window.innerWidth > 600 ? "auto" : undefined,
+          flexDirection: isMobile || isTablet ? "column" : "row",
+          marginLeft: "auto",
+          marginRight: "auto",
+          alignItems: "center",
+          paddingLeft: isMobile || isTablet ? 0 : undefined,
+          paddingRight: isMobile || isTablet ? 0 : undefined,
+          boxSizing: "border-box"
         }}
       >
         <input
@@ -72,12 +89,15 @@ const HeroSearch = ({ onSearch }) => {
             padding: 12,
             border: "2px solid #fff",
             borderRadius: 6,
-            background: isMobile ? "transparent" : "#fff",
-            color: isMobile ? "#fff" : "#000",
+            background: isMobile || isTablet ? "transparent" : "#fff",
+            color: isMobile || isTablet ? "#fff" : "#000",
             outline: "none",
-            width: isMobile ? "100%" : 340,
-            minWidth: isMobile ? undefined : 340,
-            marginLeft: isMobile ? 0 : -60
+            width: "100%",
+            minWidth: 0,
+            marginLeft: 0,
+            marginRight: 0,
+            boxSizing: "border-box",
+            height: 48
           }}
         />
         <input
@@ -94,10 +114,15 @@ const HeroSearch = ({ onSearch }) => {
             padding: 12,
             border: "2px solid #fff",
             borderRadius: 6,
-            background: isMobile ? "transparent" : "#fff",
-            color: isMobile ? "#fff" : "#000",
+            background: isMobile || isTablet ? "transparent" : "#fff",
+            color: isMobile || isTablet ? "#fff" : "#000",
             outline: "none",
-            width: isMobile ? "100%" : undefined
+            width: "100%",
+            minWidth: 0,
+            marginLeft: 0,
+            marginRight: 0,
+            boxSizing: "border-box",
+            height: 48
           }}
         />
         <button
@@ -113,11 +138,25 @@ const HeroSearch = ({ onSearch }) => {
             padding: "0 28px",
             cursor: "pointer",
             zIndex: 2,
-            width: window.innerWidth <= 600 ? "100%" : undefined
+            width: getButtonWidth(),
+            margin: "0 auto",
+            display: "block",
+            height: 48,
+            minHeight: 48,
+            boxSizing: "border-box"
           }}
         >
           Search
         </button>
+        {(isMobile || isTablet) && (
+          <style>{`
+            .hero-bg input::placeholder {
+              color: #fff !important;
+              opacity: 1 !important;
+              font-weight: 700 !important;
+            }
+          `}</style>
+        )}
       </form>
       <div className="category-pills" style={{ display: isMobile ? 'grid' : 'flex', gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : undefined, gap: 12, flexWrap: isMobile ? undefined : 'wrap', justifyContent: "center", zIndex: 2, maxWidth: 540 }}>
         {pills.map(cat => (

@@ -259,43 +259,53 @@ button:hover, .category-card:hover, .gallery-thumb:hover {
 }
 @media (max-width: 900px) {
   .popular-services-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 18px !important;
+    justify-content: center !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
   }
 }
 @media (max-width: 600px) {
   .popular-services-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     box-sizing: border-box !important;
   }
   .popular-services-grid > div {
     margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   .work-grid-section {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
   }
   .work-carousel {
-    display: block !important;
-    overflow: hidden !important;
-    width: 100vw !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    position: relative;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    width: calc(100vw - 20px) !important;
   }
   .work-carousel-inner {
-    display: flex !important;
-    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    will-change: transform;
+    width: 100% !important;
   }
   .work-carousel-card {
-    min-width: 90vw !important;
-    max-width: 90vw !important;
+    min-width: calc(90vw - 20px) !important;
+    max-width: calc(90vw - 20px) !important;
     margin: 0 auto !important;
-    border-radius: 12px !important;
-    box-sizing: border-box !important;
   }
 }
 
@@ -307,6 +317,28 @@ button:hover, .category-card:hover, .gallery-thumb:hover {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+}
+
+/* Utility class for 10px left/right margin on all main sections */
+.section-padding {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+  .section-padding {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 600px) {
+  .section-padding {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -323,6 +355,8 @@ button:hover, .category-card:hover, .gallery-thumb:hover {
     box-sizing: border-box !important;
   }
   .hero-bg {
+    align-items: center !important;
+    justify-content: center !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
